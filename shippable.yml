@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk8
+build:
+  ci:
+    - mkdir -p shippable/testresults
+    - mvn -B clean package
+    - cp -r target/surefire-reports/* shippable/codecoverage/
